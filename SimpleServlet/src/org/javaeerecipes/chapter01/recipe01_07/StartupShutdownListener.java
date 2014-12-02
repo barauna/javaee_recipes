@@ -5,7 +5,6 @@ import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
-import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.ServletContextEvent;
@@ -15,21 +14,20 @@ import javax.servlet.annotation.WebListener;
 @WebListener
 public class StartupShutdownListener implements ServletContextListener {
 
-    private static int SMTP_PORT = 587;
+   // private static int SMTP_PORT = 587;
 	
 	public StartupShutdownListener() {
-        // TODO Auto-generated constructor stub
     }
 
     private boolean sendMail(String message) throws MessagingException {
     	boolean result = false;
 
     	String smtpHost = "smtp.gmail.com";
-    	String username = "leonardobarauna@gmail.com";
-    	String password = "leonarddo";
+    //	String username = "leonardobarauna@gmail.com";
+    //	String password = "leonarddo";
     	String from = "leonardobarauna@gmail.com";
     	String to = "leonardobarauna@hotmail.com";
-    	int port = SMTP_PORT;
+    // 	int port = SMTP_PORT;
     	
     	Properties props = new Properties();
     	props.put("mail.smtp.host", smtpHost);
@@ -49,10 +47,10 @@ public class StartupShutdownListener implements ServletContextListener {
     	msg.setSubject("Servlet Container listening");
     	msg.setContent(message, "text/plain");
     	
-    	Transport transport = session.getTransport("smtp");
-    	transport.connect(smtpHost, port, username, password);
-    	
-    	//Transport.send(msg);
+    	/*	Transport transport = session.getTransport("smtp");
+    		transport.connect(smtpHost, port, username, password);
+    		Transport.send(msg);
+    	*/
     	
     	result = true;
     	return result;

@@ -26,6 +26,8 @@ public class MathServlet extends HttpServlet {
 		String numA = request.getParameter("numa");
 		String numB = request.getParameter("numb");
 		
+		request.getSession().setAttribute("numA", numA);
+		
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<body>");
