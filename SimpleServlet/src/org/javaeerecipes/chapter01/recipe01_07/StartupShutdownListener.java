@@ -52,7 +52,7 @@ public class StartupShutdownListener implements ServletContextListener {
     	Transport transport = session.getTransport("smtp");
     	transport.connect(smtpHost, port, username, password);
     	
-    	Transport.send(msg);
+    	//Transport.send(msg);
     	
     	result = true;
     	return result;
