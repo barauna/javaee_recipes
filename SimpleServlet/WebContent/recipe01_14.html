@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Dispatcher Exemplo</title>
+</head>
+<body>
+	<h1>Dispatcher Example</h1>
+	<p>Realizar cálculo matemático. Insira dois números e escolha o tipo de avaliação.</p>
+	<form method="POST" action="MathDispatcher">
+		<label for="numA">Digite o número A</label>
+		<input type="text" id="numA" name="numA"/>
+		<label for="numB">Digite o número B</label>
+		<input type="text" id="numB" name="numB"/>
+		<select id="matheval" name="matheval">
+			<option value="add">Somar números</option>
+			<option value="subtract">Subtrair números</option>
+			<option value="multiply">Multiplicar números</option>
+			<option value="divide">Dividir números</option>
+		</select>
+		<input type="submit" value="Calcular"/>
+		<input type="reset" value="Cancelar"/>
+	</form>
+</body>
+</html>
